@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.listView = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
@@ -41,7 +40,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAdd,
-            this.btnEdit,
             this.btnDelete});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -55,12 +53,6 @@
             this.btnAdd.Size = new System.Drawing.Size(41, 20);
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(39, 20);
-            this.btnEdit.Text = "Edit";
             // 
             // btnDelete
             // 
@@ -76,6 +68,7 @@
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(800, 426);
             this.listView.TabIndex = 1;
+            this.listView.DoubleClick += new System.EventHandler(this.Listview);
             // 
             // formList
             // 
@@ -100,7 +93,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnAdd;
-        private System.Windows.Forms.ToolStripMenuItem btnEdit;
         private System.Windows.Forms.ToolStripMenuItem btnDelete;
         private System.Windows.Forms.DataGridView listView;
     }

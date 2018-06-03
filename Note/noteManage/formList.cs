@@ -12,6 +12,7 @@ namespace Note.noteManage
 {
     public partial class formList : Form
     {
+        private Note note;
         public formList()
         {
             InitializeComponent();
@@ -33,5 +34,19 @@ namespace Note.noteManage
             form.ShowDialog();
             this.ShowNoteList();
         }
+
+        private void Listview(object sender, EventArgs e)
+        {
+            if (this.listView.SelectedRows.Count == 1)
+            {
+                var row = this.listView.SelectedRows[0];
+                var item = (Note)row.DataBoundItem;
+
+                var form = new formEdit(item);
+                form.ShowDialog();
+                this.ShowNoteList();
+            }
+        }
+
     }
 }

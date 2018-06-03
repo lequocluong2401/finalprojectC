@@ -57,6 +57,7 @@
             // txtTitle
             // 
             this.txtTitle.Location = new System.Drawing.Point(117, 13);
+            this.txtTitle.Multiline = true;
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(100, 20);
             this.txtTitle.TabIndex = 2;
@@ -64,6 +65,7 @@
             // txtContext
             // 
             this.txtContext.Location = new System.Drawing.Point(117, 50);
+            this.txtContext.Multiline = true;
             this.txtContext.Name = "txtContext";
             this.txtContext.Size = new System.Drawing.Size(100, 20);
             this.txtContext.TabIndex = 3;

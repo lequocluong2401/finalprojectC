@@ -95,6 +95,9 @@
     <EmbeddedResource Include="noteManage\FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="noteManage\formEdit.resx">
+      <DependentUpon>formEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="noteManage\formList.resx">
       <DependentUpon>formList.cs</DependentUpon>
     </EmbeddedResource>
