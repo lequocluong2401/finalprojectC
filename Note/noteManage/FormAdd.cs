@@ -16,5 +16,29 @@ namespace Note.noteManage
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Note @note = new Note();
+            note.title = txtTitle.Text;
+            note.content = txtContext.Text;
+            try
+            {
+                var db = new Note1Entities();
+                db.Note.Add(@note);
+                db.SaveChanges(); // Do-It
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

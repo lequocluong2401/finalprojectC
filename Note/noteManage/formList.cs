@@ -16,5 +16,22 @@ namespace Note.noteManage
         {
             InitializeComponent();
         }
+        private void listLoad(object sender, EventArgs e)
+        {
+            this.ShowNoteList();
+        }
+
+        private void ShowNoteList()
+        {
+            var db = new Note1Entities();
+            this.listView.DataSource = db.Note.ToList();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var form = new FormAdd();
+            form.ShowDialog();
+            this.ShowNoteList();
+        }
     }
 }
