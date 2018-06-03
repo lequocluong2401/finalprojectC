@@ -12,7 +12,7 @@ namespace Note.noteManage
 {
     public partial class formList : Form
     {
-        private Note note;
+        
         public formList()
         {
             InitializeComponent();
@@ -48,5 +48,25 @@ namespace Note.noteManage
             }
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var db = new Note1Entities();
+            for (int i = 0; i < this.listView.SelectedRows.Count; i++)
+            {
+                var row = this.listView.SelectedRows[i];
+                var item = (Note)row.DataBoundItem;
+                try
+                {
+                    var @note = db.Note.Find(item.id);
+                    db.Note.Remove(@note);
+                    db.SaveChanges(); // Do-It
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            this.ShowNoteList();
+        }
     }
 }
