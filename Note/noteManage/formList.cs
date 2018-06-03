@@ -57,9 +57,14 @@ namespace Note.noteManage
                 var item = (Note)row.DataBoundItem;
                 try
                 {
-                    var @note = db.Note.Find(item.id);
-                    db.Note.Remove(@note);
-                    db.SaveChanges(); // Do-It
+                    DialogResult = MessageBox.Show("Bạn có muốn xoa?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (DialogResult == DialogResult.OK)
+                    {
+                        var @note = db.Note.Find(item.id);
+                        db.Note.Remove(@note);
+                        db.SaveChanges(); // Do-It
+                    }
+                   
                 }
                 catch (Exception ex)
                 {
