@@ -32,6 +32,9 @@
             this.btnAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.listView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.bntSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.SuspendLayout();
@@ -64,18 +67,46 @@
             // listView
             // 
             this.listView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView.Location = new System.Drawing.Point(0, 24);
+            this.listView.Location = new System.Drawing.Point(0, 85);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(800, 426);
+            this.listView.Size = new System.Drawing.Size(800, 353);
             this.listView.TabIndex = 1;
             this.listView.DoubleClick += new System.EventHandler(this.Listview);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nhập title";
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(80, 37);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtTitle.TabIndex = 3;
+            // 
+            // bntSearch
+            // 
+            this.bntSearch.Location = new System.Drawing.Point(208, 37);
+            this.bntSearch.Name = "bntSearch";
+            this.bntSearch.Size = new System.Drawing.Size(75, 23);
+            this.bntSearch.TabIndex = 4;
+            this.bntSearch.Text = "Tìm kiếm";
+            this.bntSearch.UseVisualStyleBackColor = true;
+            this.bntSearch.Click += new System.EventHandler(this.bntSearch_Click);
             // 
             // formList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bntSearch);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -96,5 +127,8 @@
         private System.Windows.Forms.ToolStripMenuItem btnAdd;
         private System.Windows.Forms.ToolStripMenuItem btnDelete;
         private System.Windows.Forms.DataGridView listView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.Button bntSearch;
     }
 }

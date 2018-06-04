@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Note.noteManage
 {
     public partial class formList : Form
     {
-        
+
         public formList()
         {
             InitializeComponent();
@@ -21,6 +16,7 @@ namespace Note.noteManage
         {
             this.ShowNoteList();
         }
+
 
         private void ShowNoteList()
         {
@@ -64,7 +60,7 @@ namespace Note.noteManage
                         db.Note.Remove(@note);
                         db.SaveChanges(); // Do-It
                     }
-                   
+
                 }
                 catch (Exception ex)
                 {
@@ -72,6 +68,18 @@ namespace Note.noteManage
                 }
             }
             this.ShowNoteList();
+        }
+
+        private void bntSearch_Click(object sender, EventArgs e)
+        {
+            string searchWord = txtTitle.Text;
+            var db = new Note1Entities();
+            var results = db.Note.Where(p => p.title.Contains(searchWord));
+            listView.DataSource = results.ToList() ;
+
+
+
+
         }
     }
 }
