@@ -53,7 +53,7 @@ namespace Note.noteManage
                 var item = (Note)row.DataBoundItem;
                 try
                 {
-                    DialogResult = MessageBox.Show("Bạn có muốn xoa?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    DialogResult = MessageBox.Show("Bạn có muốn xoá?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                     if (DialogResult == DialogResult.OK)
                     {
                         var @note = db.Note.Find(item.id);
@@ -70,16 +70,14 @@ namespace Note.noteManage
             this.ShowNoteList();
         }
 
-        private void bntSearch_Click(object sender, EventArgs e)
+       
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
         {
             string searchWord = txtTitle.Text;
             var db = new Note1Entities();
             var results = db.Note.Where(p => p.title.Contains(searchWord));
-            listView.DataSource = results.ToList() ;
-
-
-
-
+            listView.DataSource = results.ToList();
         }
     }
 }

@@ -34,7 +34,6 @@
             this.listView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.bntSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listView)).BeginInit();
             this.SuspendLayout();
@@ -88,23 +87,13 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(100, 20);
             this.txtTitle.TabIndex = 3;
-            // 
-            // bntSearch
-            // 
-            this.bntSearch.Location = new System.Drawing.Point(208, 37);
-            this.bntSearch.Name = "bntSearch";
-            this.bntSearch.Size = new System.Drawing.Size(75, 23);
-            this.bntSearch.TabIndex = 4;
-            this.bntSearch.Text = "Tìm kiếm";
-            this.bntSearch.UseVisualStyleBackColor = true;
-            this.bntSearch.Click += new System.EventHandler(this.bntSearch_Click);
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // formList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bntSearch);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView);
@@ -129,6 +118,5 @@
         private System.Windows.Forms.DataGridView listView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.Button bntSearch;
     }
 }
